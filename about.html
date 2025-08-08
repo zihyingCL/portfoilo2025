@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Portfolio</title>
+
+    <!-- BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="_css/style.css">
+</head>
+
+<body>
+
+    <header class="header sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">LOGO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="graphic.html">Graphic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="website.html">Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section class="about-me py-5 bg-light">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center" data-aos="fade-right">
+                        <img src="_img/bg.png" alt="Your Name" class="img-fluid rounded-circle profile-pic">
+                    </div>
+                    <div class="col-md-8" data-aos="fade-left" data-aos-delay="100">
+                        <h2 class="mb-3">About Me</h2>
+                        <p class="lead">A brief and engaging introduction about yourself. Talk about your passion for design, your philosophy, and what drives you.</p>
+                        <p>You can add more details here. For example, your skills, your background, or what you are currently learning. Make it personal and professional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Timeline -->
+        <section class="work-experience py-5">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Work Experience</h2>
+                <div class="timeline" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - Present</span>
+                            <h5>Senior Designer at a Cool Company</h5>
+                            <p>Describe your role and achievements here. Mention key projects and responsibilities.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 - 2022</span>
+                            <h5>UI/UX Designer at a Startup</h5>
+                            <p>Describe your role and achievements here. Mention key projects and responsibilities.</p>
+                        </div>
+                    </div>
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2018 - 2020</span>
+                            <h5>Junior Graphic Designer at a Studio</h5>
+                            <p>Describe your role and achievements here. Mention key projects and responsibilities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="certificates py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Certificates & Licenses</h2>
+                <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Certificate 1 -->
+                    <div class="col-md-3 col-6">
+                        <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#certificateModal">
+                            <img src="_img/demo-blog.jpg" alt="Certificate 1" class="img-fluid">
+                        </div>
+                    </div>
+                    <!-- Certificate 2 -->
+                    <div class="col-md-3 col-6">
+                        <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#certificateModal">
+                            <img src="_img/demo-blog2.jpg" alt="Certificate 2" class="img-fluid">
+                        </div>
+                    </div>
+                    <!-- Certificate 3 -->
+                    <div class="col-md-3 col-6">
+                        <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#certificateModal">
+                            <img src="_img/demo-blog3.jpg" alt="Certificate 3" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Certificate Modal -->
+    <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="img-fluid w-100" alt="Certificate Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p>
+                <a href="mailto:your.email@example.com" class="text-white"><i class="fas fa-envelope me-2"></i> your.email@example.com</a>
+            </p>
+            <p class="mb-0">&copy; 2025 [Your Name]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JQ -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- BS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="_js/main.js"></script>
+
+</body>
+
+</html>

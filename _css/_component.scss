@@ -1,0 +1,308 @@
+//== Hero Banner
+//
+.hero-banner {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background-color: $light;
+    text-align: left;
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: $gray;
+    }
+}
+
+//== Swiper Sliders
+//
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.my-swiper-graphic {
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+    }
+}
+
+.my-swiper-web {
+    .card {
+        border: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+}
+
+//== About Page
+//
+.profile-pic {
+    max-width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+//== Timeline
+//
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100%;
+        width: 2px;
+        background-color: $light;
+    }
+
+    .timeline-item {
+        padding: 1rem 2rem;
+        position: relative;
+        width: 50%;
+        
+        &:nth-child(odd) {
+            left: 0;
+            padding-right: 4rem;
+            text-align: right;
+        }
+
+        &:nth-child(even) {
+            left: 50%;
+            padding-left: 4rem;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: $white;
+            border: 4px solid $primary;
+            top: 2.5rem;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        &:nth-child(odd)::after {
+            right: -10px;
+        }
+
+        &:nth-child(even)::after {
+            left: -10px;
+        }
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+        background-color: $light;
+        border-radius: 8px;
+        
+        .timeline-date {
+            font-weight: 700;
+            color: $primary;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+//== Certificates
+//
+.certificate-thumb {
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    img {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        
+        img {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+//== Graphic Page
+//
+.sticky-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px; // Adjust based on your header height
+    
+    .nav-link {
+        color: $gray;
+        padding: 0.5rem 1rem;
+        border-left: 3px solid transparent;
+
+        &.active,
+        &:hover {
+            color: $primary;
+            border-left-color: $primary;
+        }
+    }
+}
+
+.category-banner {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: $white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 8px;
+    }
+
+    h2 {
+        position: relative;
+        z-index: 1;
+        font-size: 2.5rem;
+    }
+}
+
+.mobile-nav-trigger {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1030; // Ensure it's above other content
+}
+
+.offcanvas {
+    .nav-link {
+        color: $dark;
+        font-size: 1.1rem;
+        padding: 0.75rem 1.5rem;
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+//== Website Page
+//
+.portfolio-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+}
+
+.project-hero-banner {
+    padding: 6rem 0;
+    background-size: cover;
+    background-position: center;
+    color: $white;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.color-swatch {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    border: 2px solid $white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.my-swiper-ui {
+    .swiper-slide {
+        img {
+            border-radius: 8px;
+        }
+    }
+}
+
+
+// RWD Styles
+@media (max-width: 991.98px) {
+    // Timeline RWD
+    .timeline {
+        &::before {
+            left: 10px;
+            transform: translateX(0);
+        }
+
+        .timeline-item {
+            width: 100%;
+            left: 0 !important;
+            padding-left: 3rem;
+            padding-right: 1rem;
+            text-align: left !important;
+
+            &::after {
+                left: 0;
+            }
+        }
+    }
+}

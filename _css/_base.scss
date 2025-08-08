@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+//== Colors
+//
+$primary: #D1B26E;
+$primary-dark: #a18446;
+$dark: #212529;
+$light: #f8f9fa;
+$white: #ffffff;
+$gray: #6c757d;
+
+
+$text-main: #3f3f3f;
+$text-sub: #747474;
+$text-light: #b1b1b1;
+
+$table-line: #cacaca;
+$table-bg: #ebebeb;
+$table-hover: #f6f6f6;
+
+//== Typography
+//
+$font-family-base: 'Montserrat', 'Noto Sans TC', sans-serif;
+
+
+
+$bp-xxl: 90rem; //1440px
+$bp-xl: 75rem; // 1200px
+$bp-lg: 62rem; // 992px
+$bp-md: 48rem; // 768px
+$bp-sm: 36rem; // 576px
+$bp-xs: 20rem; // 320px
+
+
+//== Base Styles
+//
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-family-base;
+    line-height: 1.6;
+    color: $dark;
+}
+
+a {
+    color: $primary;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #a18446;
+        text-decoration: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; // Use Montserrat for headings
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover,
+    &:focus {
+        background-color: #a18446;
+        border-color: #a18446;
+    }
+}
+
+.btn-outline-primary {
+    color: $primary;
+    border-color: $primary;
+
+    &:hover,
+    &:focus {
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+    }
+}

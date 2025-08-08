@@ -1,0 +1,821 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  color: #212529;
+}
+
+a {
+  color: #D1B26E;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #a18446;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background-color: #D1B26E;
+  border-color: #D1B26E;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #a18446;
+  border-color: #a18446;
+}
+
+.btn-outline-primary {
+  color: #D1B26E;
+  border-color: #D1B26E;
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: #D1B26E;
+  color: #ffffff;
+  border-color: #D1B26E;
+}
+
+.header {
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.header .navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #D1B26E;
+}
+.header .nav-link {
+  font-weight: 500;
+  color: #212529;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.header .nav-link:hover, .header .nav-link.active {
+  color: #D1B26E;
+}
+
+.footer a:hover {
+  color: #D1B26E;
+}
+
+.hero-banner {
+  min-height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f8f9fa;
+  text-align: left;
+}
+.hero-banner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+.hero-banner .lead {
+  font-size: 1.25rem;
+  color: #6c757d;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.my-swiper-graphic .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.my-swiper-graphic .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+.my-swiper-web .card {
+  border: none;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.my-swiper-web .card:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.profile-pic {
+  max-width: 250px;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background-color: #f8f9fa;
+}
+.timeline .timeline-item {
+  padding: 1rem 2rem;
+  position: relative;
+  width: 50%;
+}
+.timeline .timeline-item:nth-child(odd) {
+  left: 0;
+  padding-right: 4rem;
+  text-align: right;
+}
+.timeline .timeline-item:nth-child(even) {
+  left: 50%;
+  padding-left: 4rem;
+}
+.timeline .timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 4px solid #D1B26E;
+  top: 2.5rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+}
+.timeline .timeline-item:nth-child(odd)::after {
+  right: -10px;
+}
+.timeline .timeline-item:nth-child(even)::after {
+  left: -10px;
+}
+.timeline .timeline-content {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+.timeline .timeline-content .timeline-date {
+  font-weight: 700;
+  color: #D1B26E;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.certificate-thumb {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.certificate-thumb img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+.certificate-thumb:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.certificate-thumb:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 100px;
+}
+.sticky-nav .nav-link {
+  color: #6c757d;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid transparent;
+}
+.sticky-nav .nav-link.active, .sticky-nav .nav-link:hover {
+  color: #D1B26E;
+  border-left-color: #D1B26E;
+}
+
+.category-banner {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.category-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+.category-banner h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 2.5rem;
+}
+
+.mobile-nav-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1030;
+}
+
+.offcanvas .nav-link {
+  color: #212529;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+}
+.offcanvas .nav-link:hover {
+  color: #D1B26E;
+}
+
+.portfolio-card {
+  -webkit-transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, -webkit-transform 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.project-hero-banner {
+  padding: 6rem 0;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+.project-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.project-hero-banner .container {
+  position: relative;
+  z-index: 1;
+}
+
+.color-swatch {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid #ffffff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.my-swiper-ui .swiper-slide img {
+  border-radius: 8px;
+}
+
+@media (max-width: 991.98px) {
+  .timeline::before {
+    left: 10px;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .timeline .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 3rem;
+    padding-right: 1rem;
+    text-align: left !important;
+  }
+  .timeline .timeline-item::after {
+    left: 0;
+  }
+}
+@media (max-width: 36rem) {
+  [data-aos-delay] {
+    -webkit-transition-delay: 0s !important;
+            transition-delay: 0s !important;
+  }
+}
+.header.animated {
+  -webkit-animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.logo.animated {
+  -webkit-animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.index-main {
+  -webkit-animation: fadeInAnimation ease-in-out 1s;
+          animation: fadeInAnimation ease-in-out 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.fade-in-top {
+  -webkit-animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.fade-in-bottom {
+  -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+          animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.duration__1s {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+.duration__2s {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.delay__1ms {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__2ms {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__3ms {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__4ms {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__5ms {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__6ms {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__7ms {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__8ms {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__9ms {
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__1s {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.delay__2s {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-7-1 11:4:21
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation kenburns-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+}
+@keyframes kenburns-top {
+  0% {
+    -webkit-transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0);
+    -webkit-transform-origin: 50% 16%;
+            transform-origin: 50% 16%;
+  }
+  100% {
+    -webkit-transform: scale(1.25) translateY(-15px);
+            transform: scale(1.25) translateY(-15px);
+    -webkit-transform-origin: center;
+            transform-origin: center;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation fade-in-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation fade-in-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2024-7-5 11:1:17
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.table {
+  border: 1px solid #cacaca;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.table thead th {
+  border-width: 1px;
+  border-color: #cacaca;
+  border-style: solid;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  vertical-align: middle;
+}
+.table thead th:first-child {
+  border-left: 1px solid #cacaca;
+}
+.table thead th:last-child {
+  border-right: 1px solid #cacaca;
+}
+.table td {
+  border: 1px solid #cacaca;
+  vertical-align: middle;
+  padding: 1rem;
+}
+.table tbody th {
+  background: #cacaca;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.table-style01 {
+  border: none;
+  text-align: center;
+}
+.table-style01 td {
+  border: none;
+}
+.table-style01 thead th {
+  background: #3f3f3f;
+  font-weight: 400;
+}
+.table-style01 tbody th {
+  background: #ebebeb;
+  color: #3f3f3f;
+  font-weight: 400;
+}
+@media (max-width: 48rem) {
+  .table-style01 tbody th {
+    font-weight: 500;
+  }
+}
+.table-style01 tr {
+  border-bottom: 1px solid #cacaca;
+}
+.table-style01 tr:hover {
+  background: #f6f6f6;
+}
+.table-style01 tfoot {
+  text-align: left;
+}
+.table-style01 tfoot ol {
+  margin-bottom: 0rem;
+}
+
+.table-style02 thead th {
+  background-color: #3f3f3f;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+@media (max-width: 48rem) {
+  .table-style02 thead th {
+    text-align: left;
+  }
+}
+.table-style02 tbody tr:nth-child(even) td {
+  background-color: #f6f6f6;
+}
+.table-style02 tbody td {
+  text-align: center;
+  border: none;
+}
+@media (max-width: 48rem) {
+  .table-style02 tbody td {
+    text-align: right;
+    padding: 0.8rem 1rem;
+  }
+}
+.table-style02 tbody td:last-child {
+  padding: 1rem;
+}
+@media (max-width: 36rem) {
+  .table-style02 tbody td:last-child {
+    padding: 1.8rem 1rem;
+  }
+}
+
+.Rwd-table {
+  display: block;
+}
+
+.Rwd-mobile {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .table {
+    border: 1px solid #cacaca;
+  }
+  .table td,
+  .table th {
+    padding: 0.5rem 0.75rem;
+  }
+  .table-rwd {
+    min-width: 100%;
+  }
+  .table-rwd thead {
+    display: none;
+  }
+  .table-rwd th,
+  .table-rwd td {
+    text-align: left;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    padding: 0.6rem 0.75rem;
+  }
+  .table-rwd th {
+    font-weight: 600;
+  }
+  .table-rwd tr {
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .table-rwd td {
+    border: none;
+    padding: 0.4rem 0.75rem;
+  }
+  .table-rwd td[data-title]:before {
+    content: attr(data-title) ":";
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+  .table-rwd-2 {
+    min-width: 100%;
+  }
+  .table-rwd-2 thead {
+    display: none;
+  }
+  .table-rwd-2 th,
+  .table-rwd-2 td {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    padding: 0.6rem 0.75rem;
+  }
+  .table-rwd-2 th {
+    font-weight: 600;
+  }
+  .table-rwd-2 tr {
+    border-bottom: 1px solid #dfdfdf;
+  }
+  .table-rwd-2 td {
+    border: none;
+    padding: 0.4rem 0.75rem;
+  }
+  .table-rwd-2 td[data-title]:before {
+    content: attr(data-title) ":";
+    text-transform: uppercase;
+    float: left;
+  }
+  .table-style01 tr:nth-child(even) {
+    background: transparent;
+  }
+  .Rwd-table {
+    display: none;
+  }
+  .Rwd-mobile {
+    display: block;
+  }
+}
+.overflow {
+  width: auto;
+  overflow-x: auto;
+}
