@@ -1,33 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-
-    <!-- BS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Swiper -->
+    <title>Portfolio Recreation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="./_css/style.css">
 </head>
-
 <body>
 
-    <header class="header sticky-top">
+    <header class="header sticky-top bg-white shadow-sm">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">LOGO</a>
@@ -49,6 +33,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="about.html">About</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="intro.html">Intro</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,108 +44,179 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-banner py-5">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-8">
-                        <h1 data-aos="fade-up">Hello, I'm [Your Name]</h1>
-                        <p class="lead" data-aos="fade-up" data-aos-delay="100">A passionate designer creating beautiful and functional websites and graphics.</p>
-                        <a href="about.html" class="btn btn-primary mt-3" data-aos="fade-up" data-aos-delay="200">More About Me</a>
-                    </div>
-                </div>
+        <section class="hero-section">
+            <h1 data-aos="fade-up">建築にちょうどよい<br>明かりをプラスする</h1>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section py-5">
+            <div class="container text-center" data-aos="fade-up">
+                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
         </section>
 
-        <!-- Graphic Works Section -->
-        <section class="graphic-work py-5 bg-light">
+        <!-- Works Section (Section 2) -->
+        <section class="works-section">
             <div class="container">
-                <h2 class="text-center mb-5" data-aos="fade-up">Graphic Design</h2>
-                <div class="swiper my-swiper-graphic" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="Graphic Work 1"></div>
-                        <div class="swiper-slide"><img src="./_img/demo-blog2.jpg" alt="Graphic Work 2"></div>
-                        <div class="swiper-slide"><img src="./_img/demo-blog3.jpg" alt="Graphic Work 3"></div>
-                        <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="Graphic Work 4"></div>
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="graphic.html" class="btn btn-outline-primary" data-aos="fade-up" data-aos-delay="200">View More Graphic Works</a>
-                </div>
+                <h2 class="section-title" data-aos="fade-up">Works</h2>
             </div>
-        </section>
-
-        <!-- Web Works Section -->
-        <section class="web-work py-5 mb-5">
-            <div class="container">
-                <h2 class="text-center mb-5" data-aos="fade-up">Website Design</h2>
-                <div class="swiper my-swiper-web" data-aos="fade-up" data-aos-delay="100">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Web Project 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Project Title 1</h5>
-                                    <p class="card-text">Brief description of the project.</p>
-                                    <a href="#" target="_blank" class="btn btn-primary">Visit Website</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <img src="./_img/demo-blog2.jpg" class="card-img-top" alt="Web Project 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Project Title 2</h5>
-                                    <p class="card-text">Brief description of the project.</p>
-                                    <a href="#" target="_blank" class="btn btn-primary">Visit Website</a>
-                                 </div>
-                            </div>
-                        </div>
-                        <!-- Project 3 -->
-                        <div class="swiper-slide">
-                            <div class="card">
-                                <img src="./_img/demo-blog3.jpg" class="card-img-top" alt="Web Project 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Project Title 3</h5>
-                                    <p class="card-text">Brief description of the project.</p>
-                                    <a href="#" target="_blank" class="btn btn-primary">Visit Website</a>
-                                </div>
+            <div class="swiper-container swiper-works" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 1</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog2.jpg" class="card-img-top" alt="Work 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 2</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog3.jpg" class="card-img-top" alt="Work 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 3</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="card h-100">
+                            <img src="./_img/demo-blog.jpg" class="card-img-top" alt="Work 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Project Title 4</h5>
+                                <p class="card-text">A brief description of this fantastic project.</p>
+                                <a href="#" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
         </section>
 
-        <p>此網站使用 gemini cli 建立， gemini-2.5-pro 耗費脈絡量 5%</p>
+        <!-- Instagram Section (Section 5) -->
+        <section class="instagram-section">
+             <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Instagram</h2>
+            </div>
+            <div class="swiper-container swiper-instagram" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 1"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog2.jpg" alt="IG 2"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog3.jpg" alt="IG 3"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 4"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog2.jpg" alt="IG 5"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog3.jpg" alt="IG 6"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 7"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 1"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog2.jpg" alt="IG 2"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog3.jpg" alt="IG 3"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 4"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog2.jpg" alt="IG 5"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog3.jpg" alt="IG 6"></div>
+                    <div class="swiper-slide"><img src="./_img/demo-blog.jpg" alt="IG 7"></div>
+                </div>
+            </div>
+            <div class="container text-center mt-4" data-aos="fade-up">
+                <a href="graphic.html" class="btn btn-outline-dark">View More on Instagram</a>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer py-4 bg-dark text-white">
+    <footer class="footer bg-dark text-white py-5">
         <div class="container text-center">
-            <p>
-                <a href="mailto:your.email@example.com" class="text-white"><i class="fas fa-envelope me-2"></i> your.email@example.com</a>
-            </p>
-            <p class="mb-0">&copy; 2025 [Your Name]. All Rights Reserved.</p>
+            <p>&copy; 2025 FUJIWARA. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JQ -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- BS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom JS -->
     <script src="./_js/main.js"></script>
-
 </body>
-
 </html>

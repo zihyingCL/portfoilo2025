@@ -1,5 +1,206 @@
+// --- Base & Variables ---
 @import "base";
 @import "layout";
 @import "component";
 @import "animation";
 @import "table";
+
+:root {
+  --font-primary: "Helvetica Neue", Arial, sans-serif;
+  --color-text: #333;
+  --color-background: #fff;
+  --color-light-gray: #f8f9f8;
+}
+
+/* --- Page Transition Effects --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  overflow-x: hidden; // Prevent horizontal scroll caused by breakout layouts
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+body.page-fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+main {
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300; // Thinner font like the reference
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+// --- Header ---
+.header .navbar-brand {
+    font-weight: bold;
+}
+
+// --- Hero Section ---
+.hero-section {
+  height: 80vh;
+  background: url('../_img/bg.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; // Dark text on light background
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+// --- About Section ---
+.about-section {
+    color: #555;
+}
+
+// --- Works Section (Section 2) ---
+.works-section {
+  padding: 2rem 0 5rem 0;
+  background-color: var(--color-light-gray);
+  overflow: hidden;
+
+  .swiper-works {
+    width: 100%;
+    padding: 2rem 0;
+
+    .swiper-slide {
+      width: 350px; // A good fixed width for cards
+      height: auto; // Let height be determined by card content
+      opacity: 0.5;
+      transform: scale(0.9);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+
+      &.swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .card {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        height: 100%;
+      }
+    }
+  }
+}
+
+// --- Instagram Section (Section 5) ---
+.instagram-section {
+  padding: 5rem 0;
+  overflow: hidden;
+
+  .swiper-instagram {
+    .swiper-wrapper {
+      transition-timing-function: linear !important; // Ensure constant speed
+    }
+    .swiper-slide {
+      width: 250px; // Set fixed width for IG slides
+      height: 250px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// --- Footer ---
+.footer {
+    background-color: #222;
+}
+
+// --- Slider Fade Overlays ---
+.works-section, .instagram-section {
+  position: relative; // Needed for pseudo-element positioning
+}
+
+.works-section::before, .works-section::after,
+.instagram-section::before, .instagram-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2; // Above slides, below navigation
+  pointer-events: none; // Allow clicks to pass through
+  width: 150px; // Width of the fade effect
+}
+
+.works-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-light-gray) 20%, transparent);
+}
+
+.works-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-light-gray) 20%, transparent);
+}
+
+.instagram-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-background) 20%, transparent);
+}
+
+.instagram-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-background) 20%, transparent);
+}
+
+/* --- Blog / Intro Page Styles --- */
+.blog-image-wrapper.img-wrap-left {
+    float: left;
+    margin-right: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 400px;
+}
+
+.blog-image-wrapper.img-wrap-right {
+    float: right;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    max-width: 400px;
+}
+
+// Clearfix for floated content to ensure container wraps them
+.blog-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media (max-width: 767.98px) {
+  .blog-image-wrapper.img-wrap-left,
+  .blog-image-wrapper.img-wrap-right {
+    float: none;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 100%; /* Ensure it takes full width */
+  }
+}
+
