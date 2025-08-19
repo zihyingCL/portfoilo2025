@@ -6,102 +6,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Making Of - My Portfolio</title>
 
-    <!-- BS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./_css/style.css">
 </head>
 
 <body>
 
-    <header class="header sticky-top">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">LOGO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graphic.html">Graphic</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="website.html">Website</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="intro.html">Intro</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <header class="header sticky-top bg-white shadow-sm">
+        <div data-include="_header"></div>
     </header>
 
     <main class="py-5">
         <div class="container blog-content">
-            <h1 class="mb-4">The Making of This Website</h1>
-            
+            <h1 class="mb-4">關於此網站</h1>
+
+            <ul>
+                <li>透過 Gemini CLI 協作完成。</li>
+                <li>提供給 Gemini 的參考網站：<a href="https://www.fujiwara-l.com/"
+                        target="_blank">https://www.fujiwara-l.com/</a>。</li>
+                <li>由於無法傳輸/辨識圖片，所有內容皆以純文字描述提供，可以提供網址連結供 Gemini 讀取參考，但經測試似乎不能完成非常複雜的條件。</li>
+            </ul>
+
+            <h2>事前準備</h2>
+            <p>提供給 Gemini 的資訊：<br />
+            <ol>
+                <li>網站架構（首頁、關於我、平面設計、網頁設計）</li>
+                <li>網站風格（不指定，讓 Gemini 自由發揮）</li>
+            </ol>
+
+            起初是想試用 Gemini 協助完成專案切版，正好有製作作品集的需求因此先個人嘗試使用 (2025.8)。
+            我使用了過往的練習檔案清理乾淨後提供給 Gemini 修改（包含基本的 html、css 與我較常使用的一些套件）。
+            由於當時沒有先規劃主視覺風格，因此僅提供一個主色 <b>#d1b26e</b> 讓其自由發揮。
+            </p>
+
+            <h2>基礎架構</h2>
             <p>
-                參考網站：https://www.fujiwara-l.com/ 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.</p>
+                當 Gemini 建立好基本的空檔案後，他主動引導了用戶去描述每個頁面的規劃。（以下文字描述為簡略版，實際下指令時有使用更詳細的說明）
+            <ol>
+                <li>首頁：使用 swiper.js 製作輪播區塊放置圖片，下方建立一個 CTA 按鈕連到平面設計分頁；使用 swiper.js 製作輪播區塊放置卡片，每個卡片對應到一個專門介紹的網頁。</li>
+                <li>關於我：最上方是簡單的自我介紹區塊，中間請給我一個適合放工作經歷的時間軸，下方則是一個簡易的相簿放置證書等圖片。</li>
+                <li>平面設計：參考「關於我」的證書區塊，但建立分類/分區以及可以快速跳轉到其他區塊的錨點連結區。</li>
+                <li>網頁設計：參考「首頁」的網頁介紹區塊，每個卡片對應到一個專門介紹的網頁</li>
+            </ol>
 
-            <div class="blog-image-wrapper my-4 img-wrap-left" data-bs-toggle="modal" data-bs-target="#certificateModal">
-                <img src="./_img/demo-blog.jpg" alt="A placeholder image" class="img-fluid rounded" data-caption="This is the first image caption.">
+            作為測試，每個網頁建立時只提供一次指令，在尚未修改的情況下如下列圖片：<br />
+            <div class="d-flex flex-wrap my-3">
+                <div class="col">
+                    <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#graphicModal"
+                        data-img-src="./_img/demo-blog.jpg" data-caption="首頁">
+                        <img src="./_img/127.0.0.1_5500_index.html.png" alt="Social Media Post 1" class="img-fluid"
+                            data-caption="首頁">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#graphicModal"
+                        data-img-src="./_img/demo-blog.jpg" data-caption="關於我">
+                        <img src="./_img/127.0.0.1_5500_about.html.png" alt="Social Media Post 1" class="img-fluid"
+                            data-caption="關於我">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#graphicModal"
+                        data-img-src="./_img/demo-blog.jpg" data-caption="平面設計">
+                        <img src="./_img/127.0.0.1_5500_graphic.html.png" alt="Social Media Post 1" class="img-fluid"
+                            data-caption="平面設計">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="certificate-thumb" data-bs-toggle="modal" data-bs-target="#graphicModal"
+                        data-img-src="./_img/demo-blog.jpg" data-caption="網頁設計">
+                        <img src="./_img/127.0.0.1_5500_website.html.png" alt="Social Media Post 1" class="img-fluid"
+                            data-caption="網頁設計">
+                    </div>
+                </div>
             </div>
+            可以看到 Gemini 所生成出來的網站比較基礎，推測原因應該是因為我掛載了 Bootstrap 並且告訴他可以使用官方文件中提及的元件。因此網站中他使用的樣式與元件基本上都是 Bootstrap
+            裡能夠看到的範例。以一個基本的 RWD 網頁來說屬於及格且沒有大問題的，但我想知道他能將網頁優化到什麼程度，因此繼續針對每頁進行優化的指令。
+            </p>
 
-            <p>Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam. Sorbi et horta. Proin quam. Et consectetuer ac, vulputate Cras et libero. Proin sodales. Phasellus sagittis, nunc non ornare rutrum, ligula eros egestas nunc, vitae semper lectus sem vel quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam commodo, magna quis consequat laoreet, augue enim consectetuer leo, eget suscipit eros libero eget mi. Nunc quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+            <h3>首頁優化</h3>
 
-            <p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
+            <p>目前生成的首頁過於呆板且很像直接套用模板製作出來的，作為作品集難以引人注目。</p>
 
-            <div class="blog-image-wrapper my-4 img-wrap-right" data-bs-toggle="modal" data-bs-target="#certificateModal">
-                <img src="./_img/demo-blog2.jpg" alt="Another placeholder image" class="img-fluid rounded" data-caption="This is the second image caption.">
+
+            <h2>問題點</h2>
+            <div class="blog-image-wrapper my-4 img-wrap-right" data-bs-toggle="modal" data-bs-target="#graphicModal">
+                <img src="./_img/flash-scss.png" alt="flash 寫出來的 scss" class="img-fluid rounded"
+                    data-caption="gemini-2.5-flash 直接把樣式都塞在了 style.scss 裏....... 並且也沒有考慮到 _base.scss 中既存的顏色設定">
             </div>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.</p>
+            <ol>
+                <li>無法處理過於複雜的事項，例如：
+                    <ul>
+                        <li>解衝突（鬼打牆解不掉 bug ）</li>
+                        <li>特殊佈局（依然被限制在基本框架中，無法做出較活潑的版面）</li>
+                        <li>將已經寫好的東西整合修改（會有幻覺，出現根本不存在現存檔案中的東西）</li>
+                    </ul>
+                    除了特殊佈局外（因為是測試用的網站，就沒有花太多時間在糾結頁面排版上），其他衝突、整合問題最終藉由其他網頁 AI 對話工具或人工除錯完成。
+                </li>
+                <li>模型問題：個人免費帳戶使用時，gemini-2.5-pro 會有每日訪問次數上限．當使用到上限時會切換成 gemini-2.5-flash ，然而免費版的 flash 在程式理解與撰寫方面很顯然的與
+                    pro 有落差。flash 修改 css 時會出現重複編寫的問題，他並不會去讀取我原有的檔案後添加修改，而是直接重新寫一行新的樣式。
+                </li>
+            </ol>
 
         </div>
     </main>
 
-    <footer class="footer py-4 bg-dark text-white">
-        <div class="container text-center">
-            <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Certificate Modal -->
-    <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+    <div class="modal fade" id="graphicModal" tabindex="-1" aria-labelledby="graphicModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <img src="" class="img-fluid w-100" alt="Enlarged Image">
+                    <img src="" class="img-fluid w-100" alt="Graphic Work Image">
                 </div>
-                <div class="modal-footer">
-                    <p class="modal-caption text-muted"></p>
+                <div class="modal-footer justify-content-center border-0">
+                    <p class="modal-caption text-white text-center"></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- JQ -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- BS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- Swiper -->
+    <div data-include="_footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom JS -->
     <script src="./_js/main.js"></script>
 
 </body>

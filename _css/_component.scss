@@ -1,309 +1,727 @@
-
 //== Hero Banner
-//
 .hero-banner {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    background-color: $light;
-    text-align: left;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-color: $light;
+  text-align: left;
 
-    h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1rem;
-    }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
 
-    .lead {
-        font-size: 1.25rem;
-        color: $gray;
-    }
+  .lead {
+    font-size: 1.25rem;
+    color: $gray;
+  }
 }
 
 //== Swiper Sliders
-//
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .my-swiper-graphic {
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-        img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-        }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
     }
+  }
 }
 
 .my-swiper-web {
-    .card {
-        border: none;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 
-        &:hover {
-            transform: translateY(-5px);
-        }
+    &:hover {
+      transform: translateY(-5px);
     }
+  }
 }
 
 //== About Page
-//
 .profile-pic {
-    max-width: 250px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 //== Timeline
-//
 .timeline {
+  position: relative;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 2px;
+    background-color: $light;
+  }
+
+  .timeline-item {
+    padding: 1rem 2rem;
     position: relative;
-    padding: 2rem 0;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 100%;
-        width: 2px;
-        background-color: $light;
+    width: 50%;
+
+    &:nth-child(odd) {
+      left: 0;
+      padding-right: 4rem;
+      text-align: right;
     }
 
-    .timeline-item {
-        padding: 1rem 2rem;
-        position: relative;
-        width: 50%;
-        
-        &:nth-child(odd) {
-            left: 0;
-            padding-right: 4rem;
-            text-align: right;
-        }
-
-        &:nth-child(even) {
-            left: 50%;
-            padding-left: 4rem;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: $white;
-            border: 4px solid $primary;
-            top: 2.5rem;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        &:nth-child(odd)::after {
-            right: -10px;
-        }
-
-        &:nth-child(even)::after {
-            left: -10px;
-        }
+    &:nth-child(even) {
+      left: 50%;
+      padding-left: 4rem;
     }
 
-    .timeline-content {
-        padding: 1.5rem;
-        background-color: $light;
-        border-radius: 8px;
-        
-        .timeline-date {
-            font-weight: 700;
-            color: $primary;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $white;
+      border: 4px solid $primary;
+      top: 2.5rem;
+      transform: translateY(-50%);
+      z-index: 1;
     }
+
+    &:nth-child(odd)::after {
+      right: -10px;
+    }
+
+    &:nth-child(even)::after {
+      left: -10px;
+    }
+  }
+
+  .timeline-content {
+    padding: 1.5rem;
+    background-color: $light;
+    border-radius: 8px;
+
+    .timeline-date {
+      font-weight: 700;
+      color: $primary;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 //== Certificates
-//
 .certificate-thumb {
-    cursor: pointer;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  img {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
     img {
-        transition: transform 0.3s ease;
+      transform: scale(1.05);
     }
-
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        
-        img {
-            transform: scale(1.05);
-        }
-    }
+  }
 }
 
 .modal-content {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .modal-body {
-    padding: 0;
+  padding: 0;
 }
 
 //== Graphic Page
-//
 .sticky-nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 100px; // Adjust based on your header height
-    
-    .nav-link {
-        color: $gray;
-        padding: 0.5rem 1rem;
-        border-left: 3px solid transparent;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px; // Adjust based on your header height
 
-        &.active,
-        &:hover {
-            color: $primary;
-            border-left-color: $primary;
-        }
+  .nav-link {
+    color: $gray;
+    padding: 0.5rem 1rem;
+    border-left: 3px solid transparent;
+
+    &.active,
+    &:hover {
+      color: $primary;
+      border-left-color: $primary;
     }
+  }
 }
 
 .category-banner {
-    height: 200px;
-    background-size: cover;
-    background-position: center;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: $white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  h2 {
     position: relative;
-    color: $white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.4);
-        border-radius: 8px;
-    }
-
-    h2 {
-        position: relative;
-        z-index: 1;
-        font-size: 2.5rem;
-    }
+    z-index: 1;
+    font-size: 2.5rem;
+  }
 }
 
 .mobile-nav-trigger {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1030; // Ensure it's above other content
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1030; // Ensure it's above other content
 }
 
 .offcanvas {
-    .nav-link {
-        color: $dark;
-        font-size: 1.1rem;
-        padding: 0.75rem 1.5rem;
-        &:hover {
-            color: $primary;
-        }
+  .nav-link {
+    color: $dark;
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+
+    &:hover {
+      color: $primary;
     }
+  }
 }
 
 //== Website Page
-//
 .portfolio-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .project-hero-banner {
-    padding: 6rem 0;
-    background-size: cover;
-    background-position: center;
-    color: $white;
-    text-align: center;
+  padding: 6rem 0;
+  background-size: cover;
+  background-position: center;
+  color: $white;
+  text-align: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .container {
     position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.5);
-    }
-
-    .container {
-        position: relative;
-        z-index: 1;
-    }
+    z-index: 1;
+  }
 }
 
 .color-swatch {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
-    border: 2px solid $white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: 2px solid $white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .my-swiper-ui {
-    .swiper-slide {
-        img {
-            border-radius: 8px;
-        }
+  .swiper-slide {
+    img {
+      border-radius: 8px;
     }
+  }
 }
 
-
-// RWD Styles
+//== RWD Styles
 @media (max-width: 991.98px) {
-    // Timeline RWD
-    .timeline {
-        &::before {
-            left: 10px;
-            transform: translateX(0);
-        }
-
-        .timeline-item {
-            width: 100%;
-            left: 0 !important;
-            padding-left: 3rem;
-            padding-right: 1rem;
-            text-align: left !important;
-
-            &::after {
-                left: 0;
-            }
-        }
+  // Timeline RWD
+  .timeline {
+    &::before {
+      left: 10px;
+      transform: translateX(0);
     }
+
+    .timeline-item {
+      width: 100%;
+      left: 0 !important;
+      padding-left: 3rem;
+      padding-right: 1rem;
+      text-align: left !important;
+
+      &::after {
+        left: 0;
+      }
+    }
+  }
+}
+
+//== 其他區塊（原 style.scss 移入）
+//
+// ==========================================================================
+//  STYLES MOVED FROM STYLE.SCSS
+// ==========================================================================
+//
+
+// --- Header ---
+.header .navbar-brand {
+  font-weight: bold;
+}
+
+// --- Hero Section ---
+.hero-section {
+  height: 80vh;
+  background: url('../_img/bg.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333; // Dark text on light background
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+// --- About Section ---
+.about-section {
+  color: #555;
+}
+
+// --- Works Section (Section 2) ---
+.works-section {
+  padding: 2rem 0 5rem 0;
+  background-color: var(--color-light-gray);
+  overflow: hidden;
+
+  .swiper-works {
+    width: 100%;
+    padding: 2rem 0;
+
+    .swiper-slide {
+      width: 350px; // A good fixed width for cards
+      height: auto; // Let height be determined by card content
+      opacity: 0.5;
+      transform: scale(0.9);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+
+      &.swiper-slide-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .card {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        height: 100%;
+      }
+    }
+  }
+}
+
+// --- Instagram Section (Section 5) ---
+.instagram-section {
+  padding: 5rem 0;
+  overflow: hidden;
+
+  .swiper-instagram {
+    .swiper-wrapper {
+      transition-timing-function: linear !important; // Ensure constant speed
+    }
+
+    .swiper-slide {
+      width: 250px; // Set fixed width for IG slides
+      height: 250px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// --- Footer ---
+.footer {
+  background-color: #222;
+}
+
+// --- Slider Fade Overlays ---
+.works-section,
+.instagram-section {
+  position: relative; // Needed for pseudo-element positioning
+}
+
+.works-section::before,
+.works-section::after,
+.instagram-section::before,
+.instagram-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2; // Above slides, below navigation
+  pointer-events: none; // Allow clicks to pass through
+  width: 150px; // Width of the fade effect
+}
+
+.works-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-light-gray) 20%, transparent);
+}
+
+.works-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-light-gray) 20%, transparent);
+}
+
+.instagram-section::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-background) 20%, transparent);
+}
+
+.instagram-section::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-background) 20%, transparent);
+}
+
+/* --- Blog / Intro Page Styles --- */
+.blog-image-wrapper.img-wrap-left {
+  float: left;
+  margin-right: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+.blog-image-wrapper.img-wrap-right {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+// Clearfix for floated content to ensure container wraps them
+.blog-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 767.98px) {
+  .blog-image-wrapper.img-wrap-left,
+  .blog-image-wrapper.img-wrap-right {
+    float: none;
+    margin: 1rem auto;
+    width: 100%;
+    max-width: 100%; /* Ensure it takes full width */
+  }
+}
+
+/* --- Graphic Page --- */
+.graphic-section {
+  padding: 5rem 0;
+}
+
+.graphic-item {
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* --- Website Page --- */
+.website-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.website-card {
+  margin-bottom: 2rem;
+
+  .card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .card-body {
+    h5 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+  }
+}
+
+/* --- Website Detail Page --- */
+.website-detail-header {
+  padding: 5rem 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.website-detail-content {
+  padding: 5rem 0;
+}
+
+.tech-stack-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.3rem 0.8rem;
+    margin: 0.2rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+.website-gallery {
+  margin-top: 3rem;
+
+  img {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* --- About Page --- */
+.about-me-section {
+  padding: 5rem 0;
+
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 2rem auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  list-style: none;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 2px;
+  background-color: #e9ecef;
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-item .timeline-content {
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: calc(50% + 30px);
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $primary;
+  border: 4px solid #fff;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-weight: bold;
+  color: $primary;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 40px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    left: 0;
+  }
+}
+
+.certificates-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.certificate-item {
+  margin-bottom: 2rem;
+
+  img {
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+#certificateModal .modal-lg {
+  max-width: 80%;
+}
+
+#certificateModal .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+#certificateModal .modal-body {
+  padding: 0;
+}
+
+#certificateModal img {
+  width: 100%;
+  height: auto;
+}
+
+//== Utility Classes
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+}
+
+.rounded {
+  border-radius: .25rem;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

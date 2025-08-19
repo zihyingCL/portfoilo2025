@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,37 +10,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./_css/style.css">
 </head>
+
 <body>
 
     <header class="header sticky-top bg-white shadow-sm">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">LOGO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graphic.html">Graphic</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="website.html">Website</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="intro.html">Intro</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            <div data-include="_header"></div>
     </header>
 
     <main>
@@ -181,7 +156,7 @@
 
         <!-- Instagram Section (Section 5) -->
         <section class="instagram-section">
-             <div class="container">
+            <div class="container">
                 <h2 class="section-title" data-aos="fade-up">Instagram</h2>
             </div>
             <div class="swiper-container swiper-instagram" data-aos="fade-up">
@@ -208,15 +183,12 @@
         </section>
     </main>
 
-    <footer class="footer bg-dark text-white py-5">
-        <div class="container text-center">
-            <p>&copy; 2025 FUJIWARA. All Rights Reserved.</p>
-        </div>
-    </footer>
+    <div data-include="_footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./_js/main.js"></script>
 </body>
+
 </html>
